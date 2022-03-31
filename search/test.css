@@ -1,0 +1,40 @@
+.box{
+    width: 487px;
+    height: 40px;
+    border: 1px solid black;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    z-index: -3;
+}
+.input_box{
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+}
+input[type=text]{
+    font-size: 16px;
+    width: 487px;
+    height: 30px;
+    border-radius: 50px;
+    padding-left: 20px;
+    border: 1px solid #ebebeb;
+}
+
+#box_border{
+    border: 1px solid black;
+    width: 600px;
+    height: 40px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    z-index: -3;
+    position: absolute;
+}
+
+input[type=text]:hover{
+    border: 1px solid red;
+}
+

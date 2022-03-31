@@ -1,0 +1,176 @@
+.google_logo{
+    position: relative;
+    border: 1px solid red;
+    height: auto;
+}
+
+.merge_logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 180px;
+    border: 1px solid black;
+}
+
+#text{
+    position: absolute;
+    left: 798px;
+    top: 305px;
+    font-size: 16px;
+    color: #4285f4;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid red;
+    z-index: 3;
+}
+
+.top_panel{
+    margin-top: 0px;
+    height: 40px;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.label_top{
+    border: 1px solid red;
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+a{
+    font-size: 16px;
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+    text-decoration: none;
+}
+
+a:hover{
+    color: #5f6368;
+    text-decoration: underline;
+}
+
+.form_panel{
+    border: 1px solid red;
+    margin-top: 10px;
+}
+
+form{
+    text-align: center;
+}
+
+input[type=text]{
+    margin-left: 12px;
+    font-size: 16px;
+    width: 487px;
+    height: 20px;
+}
+
+input[type=submit]{
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #5f6368;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    height: 36px;
+    width: 136px;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover{
+    color: black;
+    border: solid lightgray 1px;
+}
+
+input[type=button]{
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #5f6368;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    height: 36px;
+    width: 136px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+input[type=button]:hover{
+    color: black;
+    border: solid lightgray 1px;
+}
+
+.buttons{
+    margin-top: 16px;
+}
+
+.input_box{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_logo{
+    border: 1px solid blue;
+    width: 20px;
+    height: 45px;
+}
+
+svg{
+    border: 1px solid red;
+}
+
+#box_border{
+    border: 1px solid black;
+    width: 560px;
+    height: 40px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    position: absolute;
+    z-index: -3;
+}
+
+.bottom_panel{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border: 1px solid red;
+    bottom: 0px;
+    height: 45px;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.label_left{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid red;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #5f6368;
+    width: 30%;
+}
+
+#left_1:hover, #left_2:hover, #left_3:hover, #left_4:hover{
+    color: #5f6368;
+    text-decoration: underline;
+}
+
+.label_right{
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    border: 1px solid red;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #5f6368;
+    width: 15%;
+}
+
+#right_1:hover, #right_2:hover, #right_3:hover{
+    color: #5f6368;
+    text-decoration: underline;
+}
