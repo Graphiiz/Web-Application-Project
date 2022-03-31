@@ -1,0 +1,92 @@
+.image{
+    border: 1px solid red;
+    height: 250px;
+}
+
+img{
+    height: 100%;
+    width: auto;
+}
+
+.block_a{
+    border: 1px solid red;
+}
+
+.block_b{
+    border: 1px solid red;
+}
+
+.description{
+    border: 1px solid red;
+}
+
+.price{
+    border: 1px solid red;
+    margin-top: 5px;
+}
+
+.add_watchlist{
+    border: 1px solid red;
+    margin-top: 5px;
+}
+
+.bid{
+    border: 1px solid red;
+    margin-top: 20px;
+}
+
+input[type=number]{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9
+}
+
+.bid_button{
+    margin-top: 10px;
+}
+
+.close_bid{
+    margin-top: 10px;
+}
+
+.detail{
+    margin-top: 10px;
+}
+
+.block_c{
+    margin-top: 10px;
+}
+
+.comment_form{
+    border: 1px solid red;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input[name=comment]{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    font-size: 16px;
+}
+
+.comment_button{
+    margin-top: 10px;
+}
+
+.comment_block{
+    border: 1px solid red;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.poster{
+    border: 1px solid red;
+}
+
+.comment{
+    border: 1px solid red;
+}

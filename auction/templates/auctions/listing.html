@@ -1,0 +1,121 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'auctions/listing_styles.css' %}">
+{% endblock %}
+{% block body %}
+    <h2>Listing: {{ listing.title }}</h2>
+    <div class="block_a">
+        <div class="image">
+            <img src="{{ listing.img_url }}" alt="Picture">
+        </div>
+        <div class="block_b">
+            <div class="description">
+                <h4>Description: </h4>{{ listing.description }}
+            </div>
+            {% if listing.status == True %}
+                <div class="price">
+                    <h4>Price: </h4>${{ listing.price }}
+                </div>
+            {% endif %}
+            {% if listing.status == True %}
+                <div class="add_watchlist">
+                    <form action="{% url 'listing' listing.id %}" method="POST">
+                        {% csrf_token %}
+                        {% if not in_watchlist %}
+                            <input type="submit" name="add" value="Add to Watchlist">
+                        {% else %}
+                            <input type="submit" name="remove" value="Remove from Watchlist">
+                        {% endif %}
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if current_user == listing.user.username %}
+        {% if listing.status == True %}
+            <div>
+                {{ message }}
+            </div>
+            <div class="close_bid">
+                <form action="{% url 'listing' listing.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" name="close" value="Close bid">
+                </form>
+            </div>
+        {% else %}
+            <div>
+                This listing is inactive. The auction is closed
+            </div>
+            <div>
+                {{ message }}
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="bid">
+            {% if listing.status == True %}
+                <div>
+                    {{ message }}
+                </div>
+                <form class="input_bid" action="{% url 'listing' listing.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="number" name="bid" step="any" required>
+                    <div class="bid_button">
+                        <input type="submit" name = "bids" value="Place Bid">
+                    </div>
+                </form>
+            {% else %}
+                <div>
+                    This listing is inactive. The auction is closed
+                </div>
+                <div>
+                    {{ message }}
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="detail">
+        <div class="detail_a">
+            Listed by: {{ listing.user }}
+        </div>
+        <div class="detail_b">
+            Category: {% if listing.category != None %} {{ listing.category }} {% else %} No Category Listed {% endif%}
+        </div>
+    </div>
+    <div class="block_c">
+        <h4>Comments:</h4>
+        <div>
+            {% if not comment %}
+                <h5>No comments.</h5>
+            {% endif %}
+        </div>
+        <div class="comment_area">
+            {% for comment in comments %}
+                <div class="comment_block">
+                    <div class="poster">{{ comment.user.username }}</div>
+                    <div class="comment">{{ comment.comment }}</div>
+                    {% if comment.user.username == current_user %}
+                        <div class="delete_comment">
+                            <form action="{% url 'listing' listing.id %}" method = "POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                                <input type="submit" name="delete_comment" value="Delete">
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="comment_form">
+            <form action="{% url 'listing' listing.id %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="comment" required>
+                <div class="comment_button">
+                    <input type="submit" value="Post">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'auctions/index_styles.css' %}">
+{% endblock %}
+{% block body %}
+    <h2>Watchlist</h2>
+
+    {% for listing in listings %}
+        <div class="listing">
+            <div class="image">
+                <img src="{{ listing.img_url }}" alt="Picture">
+            </div>
+            <div class="details">
+                <div class="title">
+                    <a href="{% url 'listing' listing.id %}"><h2>{{ listing.title }}</h2></a>
+                </div>
+                <div class="description">
+                    Description: {{ listing.description }}
+                </div>
+                <div class="price">
+                    Price: ${{ listing.price }}
+                </div>
+                <div class="category">
+                    Category: {{ listing.category }}
+                </div>
+                <div class="time">
+                    Create time: {{ listing.post_time }}
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <h3>No watchlists.</h3>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'auctions/create_styles.css' %}">
+{% endblock %}
+{% block body %}
+    <h2>Create Listing</h2>
+    <form action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
+        <div class="form_field">
+            <label for="title" class="label">Title: </label>
+            <input type="text" name="title" placeholder="type here" required>
+        </div>
+        <div class="form_field">
+            <label for="description" class="label">Description: </label>
+            <textarea name="description" id="description" cols="30" rows="10" maxlength="256" required></textarea>
+        </div>
+        <div class="form_field">
+            <label for="bid" class="label">Start bid: </label>
+            <input type="number" name="bid" placeholder="type here" required>
+        </div>
+        <h3>Optional: </h3>
+        <div class="form_field">
+            <label for="bid" class="label">Image URL: </label>
+            <input type="url" name="url">
+        </div>
+        <div class="form_field">
+            <label for="category" class="label">Category: </label>
+            <select name="category" class = "dropdown">
+                {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div style="display: flex; margin-top: 10px;">
+            <input type="submit" value="Submit">
+        </div>
+        
+    </form>
+{% endblock %}

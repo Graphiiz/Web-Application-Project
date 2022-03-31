@@ -1,0 +1,22 @@
+.form_field{
+    border: 1px solid red;
+    display: flex;
+    margin-top: 10px;
+}
+
+.label{
+    border: 1px solid red;
+    width: 100px;
+    margin-top: 7px;
+}
+
+input[type=text]{
+    height: 30px;
+    margin-top: 6px;
+}
+
+.dropdown{
+    border: 1px solid red;
+    height: 30px;
+    margin-top: 5px;
+}
