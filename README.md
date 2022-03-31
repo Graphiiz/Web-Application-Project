@@ -5,3 +5,6 @@ Practicing project for web programming using python and django and javascript
 * wiki : wiki-like webpage with page redirection and content management using django
 * auction : web application for auction
 * mail : mimic the function of email system (like gmail), applying javascript for content control
+## Java project
+* word finder application
+* client/server system
